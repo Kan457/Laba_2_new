@@ -10,7 +10,8 @@ def from_my_url(url_web: str):
         data = response.content.decode("utf-8")
         soup = BeautifulSoup(data, "html.parser")
         contents = soup.findAll("p") 
-        return [content.get_text(strip = True) for content in contents]
+        full_text = " ".join(content.get_text(strip=True) for content in contents)
+        return full_text
 
     except requests.RequestException as e:
         print(f"Произошла ошибка: {e}")
