@@ -23,7 +23,7 @@ if message == "1": # Проверка через файл
 elif message == "2":# Проверка через консоль
         text = input("Введите текст: ")
         for i in create_login(text):
-             print(i.group)
+            print(i.group())
 
 elif message == "3":# Проверка с сайта
     values = create_login(from_my_url('https://gist.github.com/Kan457/589b69ca0c16d69116487aeb92f2cb9d/raw'))
